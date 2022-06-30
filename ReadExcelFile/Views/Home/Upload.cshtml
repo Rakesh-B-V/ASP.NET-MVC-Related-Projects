@@ -1,0 +1,35 @@
+﻿@model List<ReadExcelFile.Models.Movies>
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table>
+        <tr>
+            <td>
+                File:
+            </td>
+            <td>
+                <input type="file" name="UploadedFile" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <input type="submit" name="submit" value="submit" />
+            </td>
+        </tr>
+    </table>
+}
+
+@if (Model != null && Model.Any())
+{
+        @*<div style="margin-left: auto; margin-right: auto; text-align: center;">
+            <asp:Label ID="Label3" runat="server" Text="ABC" Font-Bold="true" Font-Size="X-Large"
+                    CssClass="StrongText"></asp:Label>
+        </div>*@
+    <h3 style="color:forestgreen; text-align: center">File Uploaded Successfully</h3>
+}
+
+
